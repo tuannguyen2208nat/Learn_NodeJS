@@ -1,8 +1,12 @@
 const express = require('express')
 const path = require('path')
+require('dotenv').config()
+
+console.log(">>> check env: ", process.env)
 
 const app = express()
-const port = 8080
+const port = process.env.PORT || 3000;
+const hostname = process.env.HOST_NAME;
 
 
 app.set('views', path.join(__dirname, './views/'))
